@@ -27,12 +27,12 @@ variable "MYIP" {
 }
 
 variable "rmquser" {
-  default = "rabbit"
+  default = "ExampleUserrabbit"
 
 }
 
 variable "rmqpass" {
-  default = "Pass@780956283"
+  default = "NewStrongPassword123"
 }
 
 variable "dbuser" {
