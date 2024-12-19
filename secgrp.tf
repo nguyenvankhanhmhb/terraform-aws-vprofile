@@ -2,6 +2,7 @@ resource "aws_security_group" "vprofile-bean-elb-sg" {
   name        = "vprofile-bean-elb-sg"
   description = "Security group for bean-elb"
   vpc_id      = module.vpc.vpc_id
+
   egress {
     from_port   = 0
     protocol    = "-1"
@@ -28,10 +29,11 @@ resource "aws_security_group" "vprofile-bastion-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   ingress {
-    from_port   = 22
-    protocol    = "tcp"
-    to_port     = 22
-    cidr_blocks = [var.MYIP]
+    from_port = 22
+    protocol  = "tcp"
+    to_port   = 22
+    #    cidr_blocks = [var.MYIP]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
 

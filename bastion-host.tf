@@ -1,9 +1,10 @@
 resource "aws_instance" "vprofile-bastion" {
   ami           = lookup(var.AMIs, var.AWS_REGION)
   instance_type = "t2.micro"
-  #  /key_name               = aws_key_pair.vprofilekey.key_name
+#    key_name               = aws_key_pair.vprofilekey.key_name
   key_name                    = aws_key_pair.ec2-bastion-host-key-pair.key_name
   subnet_id                   = module.vpc.public_subnets[0]
+#  key_name =aws_key_pair.test_
   count                       = var.instance_count
   associate_public_ip_address = true
   vpc_security_group_ids      = [aws_security_group.vprofile-bastion-sg.id]

@@ -11,11 +11,12 @@ variable "AMIs" {
   }
 }
 variable "PRIVATE_KEY_PATH" {
-  default = "vprofilekey"
-
+#    default = "./vprofilekey"
+  default = "ec2-bastion-key-pair.pem"
+#  default = "test_key.pem"
 }
 variable "PUBLIC_KEY_PATH" {
-  default = "vprofilekey.pub"
+  default = "./vprofilekey.pub"
 }
 
 variable "USERNAME" {
